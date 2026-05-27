@@ -1,0 +1,7 @@
+Open the ApiDemos app.
+Scroll down and tap on "Views" from the main menu list.
+Scroll down and tap on "Buttons" from the Views submenu.
+Verify the Buttons screen is displayed with different button styles (Normal, Small, Toggle).
+Tap the "Toggle" button and verify it changes state.
+Go back to the Views list.
+Go back to the main ApiDemos screen.

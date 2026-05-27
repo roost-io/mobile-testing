@@ -1,0 +1,258 @@
+{
+  "app_package": "io.appium.android.apis",
+  "platform": "android",
+  "app_type": "native",
+  "app_category": "mobile app",
+  "test_name": "Views Navigation and Toggle Button Interaction",
+  "user_journeys": [],
+  "proposed_scenarios": [
+    {
+      "scenario_name": "Discovered Workflow: Views Navigation and Toggle Button Interaction",
+      "description": "Verify navigation to the Buttons view from the main list, and toggle state changes on the Toggle Button.",
+      "workflow_narrative": "The user launches the ApiDemos app, accesses the 'Views' submenu, navigates to 'Buttons', interacts with the 'Toggle' button to toggle its state, and successfully returns back to the main screen using back navigation.",
+      "appium_implementation_guidance": [
+        "Use WebDriverWait for element presence when navigating between views list and submenu.",
+        "Verify the state of the toggle button by checking the text attribute ('ON' / 'OFF') or checked attribute before and after interaction."
+      ],
+      "test_type": "e2e_business_workflow",
+      "priority": "critical",
+      "business_goal": "Ensure interactive UI elements perform and reflect state transitions properly",
+      "user_story": "As an app developer, I want to verify that UI buttons, particularly Toggle Buttons, successfully register click events and change state, so that user input works reliably.",
+      "detailed_steps": [
+        {
+          "step_number": 1,
+          "action": "launch_app",
+          "component": "App Launch",
+          "description": "Launch the ApiDemos application",
+          "expected_activity": "io.appium.android.apis/.ApiDemos",
+          "verification_point": "App launched and main API list is visible",
+          "business_impact": "App accessibility and initialization",
+          "selector": "driver.activate_app('io.appium.android.apis')",
+          "all_selectors": [],
+          "confidence": 100,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "MainScreen",
+            "screen_activity_pattern": ".ApiDemos"
+          },
+          "method_context": {
+            "suggested_method_name": "launchApp",
+            "action_type": "launch"
+          }
+        },
+        {
+          "step_number": 2,
+          "action": "tap",
+          "component": "Views",
+          "description": "Tap on 'Views' to access the list of UI element demonstrations",
+          "expected_activity": "io.appium.android.apis/.ApiDemos",
+          "verification_point": "Views submenu is displayed",
+          "business_impact": "Ability to navigate deep menus",
+          "selector": "driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text(\"Views\")')",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"android:id/text1\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "android:id/text1"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text(\"Views\")')",
+              "strategy": "uiautomator",
+              "confidence": 80,
+              "locator_type": "AppiumBy.ANDROID_UIAUTOMATOR",
+              "locator_value": "new UiSelector().text(\"Views\")"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.XPATH, '//*[@text=\"Views\"]')",
+              "strategy": "xpath_text",
+              "confidence": 75,
+              "locator_type": "AppiumBy.XPATH",
+              "locator_value": "//*[@text=\"Views\"]"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.XPATH, '//*[@resource-id=\"android:id/text1\"]')",
+              "strategy": "xpath_resource_id",
+              "confidence": 70,
+              "locator_type": "AppiumBy.XPATH",
+              "locator_value": "//*[@resource-id=\"android:id/text1\"]"
+            }
+          ],
+          "confidence": 95,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "MainScreen",
+            "screen_activity_pattern": ".ApiDemos"
+          },
+          "method_context": {
+            "suggested_method_name": "tapViews",
+            "action_type": "tap"
+          }
+        },
+        {
+          "step_number": 3,
+          "action": "tap",
+          "component": "Buttons",
+          "description": "Tap on 'Buttons' option in the Views menu",
+          "expected_activity": "io.appium.android.apis/.view.Buttons1",
+          "verification_point": "Buttons view loaded containing various style buttons",
+          "business_impact": "Access to component testing page",
+          "selector": "driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text(\"Buttons\")')",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"android:id/text1\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "android:id/text1"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text(\"Buttons\")')",
+              "strategy": "uiautomator",
+              "confidence": 80,
+              "locator_type": "AppiumBy.ANDROID_UIAUTOMATOR",
+              "locator_value": "new UiSelector().text(\"Buttons\")"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.XPATH, '//*[@text=\"Buttons\"]')",
+              "strategy": "xpath_text",
+              "confidence": 75,
+              "locator_type": "AppiumBy.XPATH",
+              "locator_value": "//*[@text=\"Buttons\"]"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.XPATH, '//*[@resource-id=\"android:id/text1\"]')",
+              "strategy": "xpath_resource_id",
+              "confidence": 70,
+              "locator_type": "AppiumBy.XPATH",
+              "locator_value": "//*[@resource-id=\"android:id/text1\"]"
+            }
+          ],
+          "confidence": 95,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "ViewsScreen",
+            "screen_activity_pattern": ".ApiDemos"
+          },
+          "method_context": {
+            "suggested_method_name": "tapButtons",
+            "action_type": "tap"
+          }
+        },
+        {
+          "step_number": 4,
+          "action": "tap",
+          "component": "Toggle Button",
+          "description": "Tap on the Toggle Button (initially labeled OFF) to change state",
+          "expected_activity": "io.appium.android.apis/.view.Buttons1",
+          "verification_point": "Button state successfully transitions from OFF to ON",
+          "business_impact": "Interactive components reflect toggle action correctly",
+          "selector": "driver.find_element(AppiumBy.ID, \"io.appium.android.apis:id/button_toggle\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"io.appium.android.apis:id/button_toggle\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "io.appium.android.apis:id/button_toggle"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text(\"OFF\")')",
+              "strategy": "uiautomator",
+              "confidence": 80,
+              "locator_type": "AppiumBy.ANDROID_UIAUTOMATOR",
+              "locator_value": "new UiSelector().text(\"OFF\")"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.XPATH, '//*[@text=\"OFF\"]')",
+              "strategy": "xpath_text",
+              "confidence": 75,
+              "locator_type": "AppiumBy.XPATH",
+              "locator_value": "//*[@text=\"OFF\"]"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.XPATH, '//*[@resource-id=\"io.appium.android.apis:id/button_toggle\"]')",
+              "strategy": "xpath_resource_id",
+              "confidence": 70,
+              "locator_type": "AppiumBy.XPATH",
+              "locator_value": "//*[@resource-id=\"io.appium.android.apis:id/button_toggle\"]"
+            }
+          ],
+          "confidence": 95,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "ButtonsScreen",
+            "screen_activity_pattern": ".view.Buttons1"
+          },
+          "method_context": {
+            "suggested_method_name": "toggleButton",
+            "action_type": "tap"
+          }
+        },
+        {
+          "step_number": 5,
+          "action": "back",
+          "component": "Back Navigation",
+          "description": "Navigate back to the Views list",
+          "expected_activity": "io.appium.android.apis/.ApiDemos",
+          "verification_point": "Views submenu list is displayed",
+          "business_impact": "Backward compatibility and app state retention",
+          "selector": "driver.back()",
+          "all_selectors": [],
+          "confidence": 100,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "ButtonsScreen",
+            "screen_activity_pattern": ".view.Buttons1"
+          },
+          "method_context": {
+            "suggested_method_name": "goBack",
+            "action_type": "back"
+          }
+        },
+        {
+          "step_number": 6,
+          "action": "back",
+          "component": "Back Navigation",
+          "description": "Navigate back to the main menu screen of ApiDemos",
+          "expected_activity": "io.appium.android.apis/.ApiDemos",
+          "verification_point": "Main API demos screen displayed containing primary list",
+          "business_impact": "Ensures clean return navigation to main screen flow",
+          "selector": "driver.back()",
+          "all_selectors": [],
+          "confidence": 100,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "ViewsScreen",
+            "screen_activity_pattern": ".ApiDemos"
+          },
+          "method_context": {
+            "suggested_method_name": "goBackToMain",
+            "action_type": "back"
+          }
+        }
+      ],
+      "expected_results": [
+        "User successfully opens Views list",
+        "User opens Buttons page to see components",
+        "Toggle action registers correctly",
+        "Two sequential back navigations clean and restore view to app main page"
+      ],
+      "edge_cases_to_test": [
+        "Rapidly double tapping toggle button to see if UI state stays consistent",
+        "Toggling button, executing back and verifying state persistence/reset when navigating forward again",
+        "Device rotation on Buttons screen"
+      ],
+      "data_requirements": [],
+      "prerequisites": [
+        "ApiDemos app must be installed and target device connected"
+      ],
+      "platform": "android"
+    }
+  ],
+  "analysis_timestamp": "2026-05-22T18:16:40.688257",
+  "confidence_score": 0.5,
+  "agent_success": true,
+  "trajectory_path": "/Users/iamdm/Desktop/mobile/temp_info/io.appium.android.apis/extracted_data/mobile_agent_data/trajectories/traces/android_api_demo_PASS_2026-05-22T18-13-37/tool_calls.json"
+}

@@ -1,0 +1,46 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+
+# --- Virtual environments ---
+.venv/
+venv/
+env/
+ENV/
+dm/
+
+# --- Environments / secrets ---
+# Real .env files must never be committed. Templates (.env.template / .env.example) are tracked.
+.env
+.env.local
+*.env.local
+secrets.*
+credentials.*
+*.pem
+*.key
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# --- Build / packaging artifacts ---
+build/
+dist/
+*.zip
+
+# --- Large mobile binaries (commit small APKs only if needed for demo) ---
+*.aab
+*.ipa
