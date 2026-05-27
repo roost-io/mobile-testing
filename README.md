@@ -39,6 +39,7 @@ Go back to the main ApiDemos screen.
 | `generated_tests/.../recordings/test_recording.mp4` | Screen recording captured during the actual test execution. |
 | [`generated_tests/.../.roost/metadata.json`](generated_tests/io.appium.android.apis/appium_tests/.roost/metadata.json) | Run metadata: agent outcome, generated files, execution status. |
 | [`sample_apps/ApiDemos-debug.apk`](sample_apps/ApiDemos-debug.apk) | The Android ApiDemos build under test — bundled so the repo is self-contained. |
+| [`config/mobile-app.env.template`](config/mobile-app.env.template) | Top-level config template for the Roost mobile test generator (AI provider, Appium server, scenario path, etc.). |
 
 Both `tests/` and `pom_tests/` executed successfully against the device — see
 `.roost/metadata.json` (`test_executed_success: true`, `pom_test_executed_success: true`).
