@@ -5,7 +5,9 @@ End-to-end demo of Roost's agentic mobile test generation pipeline, running agai
 
 ## The flow
 
-![Agentic flow](docs/assets/agentic-flow.gif)
+<p align="center">
+  <img src="docs/assets/agentic-flow.gif" alt="Agentic flow" width="320" />
+</p>
 
 The agent reads a plain-English scenario, explores the app on a real device, and
 produces both flat pytest tests and a Page Object Model (POM) test suite — along with
