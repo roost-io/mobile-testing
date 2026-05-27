@@ -13,6 +13,20 @@ The agent reads a plain-English scenario, explores the app on a real device, and
 produces both flat pytest tests and a Page Object Model (POM) test suite — along with
 a Gherkin feature file and a screen recording of the executed run.
 
+## The scenario
+
+The natural-language input handed to the agent ([`scenarios/android-api-demo.txt`](scenarios/android-api-demo.txt)):
+
+```text
+Open the ApiDemos app.
+Scroll down and tap on "Views" from the main menu list.
+Scroll down and tap on "Buttons" from the Views submenu.
+Verify the Buttons screen is displayed with different button styles (Normal, Small, Toggle).
+Tap the "Toggle" button and verify it changes state.
+Go back to the Views list.
+Go back to the main ApiDemos screen.
+```
+
 ## Contents
 
 | Path | What it is |
